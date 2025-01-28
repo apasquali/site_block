@@ -59,6 +59,7 @@ bingapis.com                #from black lists
 msedge.net                #from black lists
 scorecardresearch.com                #from black lists
 samsungrm.net                #from black lists
+www.samsungrm.net
 samsungqbe.com                #from black lists
 internetat.tv                #from black lists
 multiscreen.samsung.com                #from black lists
@@ -67,6 +68,9 @@ edge.microsoft.com                #from black lists
 assets.msn.com                #from black lists
 activity.windows.com                #from black lists
 abeexo-prod-remediation-iothub.azure-devices.net                #from black lists
+noticecdn.samsungcloudsolution.com
+configprd.samsungcloudsolution.net
+cdn.samsungcloudsolution.com
 109.248.206.101
 5.189.217.101
 32.294.247.104
