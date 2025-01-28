@@ -71,6 +71,9 @@ abeexo-prod-remediation-iothub.azure-devices.net                #from black list
 noticecdn.samsungcloudsolution.com
 configprd.samsungcloudsolution.net
 cdn.samsungcloudsolution.com
+sso.internetat.tv
+gpm.samsungqbe.com
+ipv4.connman.net
 109.248.206.101
 5.189.217.101
 32.294.247.104
