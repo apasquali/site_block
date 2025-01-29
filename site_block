@@ -59,7 +59,7 @@ bingapis.com                #from black lists
 msedge.net                #from black lists
 scorecardresearch.com                #from black lists
 samsungrm.net                #from black lists
-www.samsungrm.net
+# www.samsungrm.net   ## Regex List
 samsungqbe.com                #from black lists
 internetat.tv                #from black lists
 multiscreen.samsung.com                #from black lists
@@ -68,12 +68,12 @@ edge.microsoft.com                #from black lists
 assets.msn.com                #from black lists
 activity.windows.com                #from black lists
 abeexo-prod-remediation-iothub.azure-devices.net                #from black lists
-noticecdn.samsungcloudsolution.com
-configprd.samsungcloudsolution.net
-cdn.samsungcloudsolution.com
-notice.samsungcloudsolution.com
-sso.internetat.tv
-gpm.samsungqbe.com
+# noticecdn.samsungcloudsolution.com   ## Regex List
+# configprd.samsungcloudsolution.net   ## Regex List
+# cdn.samsungcloudsolution.com   ## Regex List
+# notice.samsungcloudsolution.com   ## Regex List
+# sso.internetat.tv   ## Regex List
+# gpm.samsungqbe.com   ## Regex List
 ipv4.connman.net
 109.248.206.101
 5.189.217.101
