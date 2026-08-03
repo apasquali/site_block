@@ -1,0 +1,39 @@
+name: Validate blocklist domains
+
+on:
+  push:
+    paths:
+      - 'site_block/*.domains'
+      - 'site_block/validate_domains.py'
+      - 'site_block/tests/**'
+      - 'site_block/.github/workflows/validate-domains.yml'
+  pull_request:
+    paths:
+      - 'site_block/*.domains'
+      - 'site_block/validate_domains.py'
+      - 'site_block/tests/**'
+      - 'site_block/.github/workflows/validate-domains.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site_block
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pytest
+        run: python -m pip install --upgrade pip pytest
+
+      - name: Run domain validation
+        run: python validate_domains.py
+
+      - name: Run tests
+        run: pytest -q
