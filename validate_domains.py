@@ -5,12 +5,10 @@ import urllib.request
 from pathlib import Path
 from typing import List, Tuple
 
-ROOT = Path(__file__).resolve().parent
-TLD_URL = "https://data.iana.org/TLD/tlds-alpha-by-domain.txt"
-
 
 def load_tlds() -> set[str]:
-    with urllib.request.urlopen(TLD_URL, timeout=20) as response:
+    tld_url = "https://data.iana.org/TLD/tlds-alpha-by-domain.txt"
+    with urllib.request.urlopen(tld_url, timeout=20) as response:
         text = response.read().decode("utf-8")
 
     tlds = set()
@@ -64,12 +62,14 @@ def validate_domain(domain: str, tlds: set[str] | None = None) -> List[str]:
 
 
 def iter_domain_files(root: Path | None = None) -> List[Path]:
-    root = root or ROOT
+    if root is None:
+        root = Path(__file__).resolve().parent
     return sorted(root.glob("*.domains"))
 
 
 def find_invalid_domains(root: Path | None = None) -> List[Tuple[Path, int, str, List[str]]]:
-    root = root or ROOT
+    if root is None:
+        root = Path(__file__).resolve().parent
     tlds = load_tlds()
     invalid: List[Tuple[Path, int, str, List[str]]] = []
 
@@ -87,7 +87,7 @@ def find_invalid_domains(root: Path | None = None) -> List[Tuple[Path, int, str,
 
 
 if __name__ == "__main__":
-    invalid = find_invalid_domains(ROOT)
+    invalid = find_invalid_domains()
     if invalid:
         print(f"Found {len(invalid)} invalid domain entries:")
         for path, line_number, domain, errors in invalid:

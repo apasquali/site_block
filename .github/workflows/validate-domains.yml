@@ -7,9 +7,6 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: site_block
 
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +21,8 @@ jobs:
 
       - name: Run domain validation
         run: python validate_domains.py
+        working-directory: site_block
 
       - name: Run tests
         run: pytest -q
+        working-directory: site_block
