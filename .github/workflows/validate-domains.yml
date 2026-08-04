@@ -2,17 +2,7 @@ name: Validate blocklist domains
 
 on:
   push:
-    paths:
-      - 'site_block/*.domains'
-      - 'site_block/validate_domains.py'
-      - 'site_block/tests/**'
-      - 'site_block/.github/workflows/validate-domains.yml'
   pull_request:
-    paths:
-      - 'site_block/*.domains'
-      - 'site_block/validate_domains.py'
-      - 'site_block/tests/**'
-      - 'site_block/.github/workflows/validate-domains.yml'
 
 jobs:
   validate:
