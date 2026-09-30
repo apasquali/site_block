@@ -32,4 +32,3 @@ Entries should be valid domain names and are checked by the CI workflow. The rul
 - The files are simple text-based blocklists.
 - Use them with tools that accept domain lists in .domains format.
 - Please review [LICENSE](LICENSE) for licensing terms.
-- change
